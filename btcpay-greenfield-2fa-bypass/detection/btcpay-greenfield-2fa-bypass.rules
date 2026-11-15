@@ -1,0 +1,50 @@
+# Suricata rules - BTCPay Server Greenfield API TOTP 2FA bypass (PR #7491, fixed in v2.4.2)
+# Author: al4n4n (Dadb0d)
+#
+# CWE-287 Authentication Bypass. The vulnerable BasicAuthenticationHandler accepted HTTP
+# Basic auth (email:password) for an account whose second factor is TOTP, because it only
+# rejected accounts that had a FIDO2 credential (user.Fido2Credentials.Any()). These rules
+# surface HTTP Basic authentication against the Greenfield API, which is the on-the-wire
+# signature of the bypass (and, after the fix, of attempts that the server now rejects).
+#
+# NOTE: BTCPay is normally deployed behind TLS. These rules match cleartext HTTP, so they
+# fire on a TLS-terminating proxy's plaintext leg, on an internal HTTP listener, or against
+# the shipped capture/exploit.pcap. See capture/README.md for the test command.
+#
+# Local SID range 9100000-9100099.
+
+# 1) Any HTTP Basic auth to a Greenfield API path. Post-fix (v2.4.2) Basic auth to the API
+#    is disabled by default 5 minutes after account creation (PR #7492), so this is anomalous.
+alert http any any -> any any ( \
+    msg:"BTCPAY Greenfield API HTTP Basic authentication (possible TOTP 2FA bypass PR#7491)"; \
+    flow:established,to_server; \
+    http.uri; content:"/api/v1/"; startswith; \
+    http.header; content:"Authorization|3a 20|Basic "; nocase; \
+    classtype:attempted-admin; \
+    reference:url,github.com/btcpayserver/btcpayserver/pull/7491; \
+    metadata:cwe CWE-287, affected_version 2.4.1, fixed_version 2.4.2; \
+    sid:9100001; rev:1;)
+
+# 2) Higher fidelity: Basic auth aimed at server-admin / fund-bearing endpoints
+#    (user list, server info, store + Lightning node data) = post-bypass enumeration.
+alert http any any -> any any ( \
+    msg:"BTCPAY Greenfield API Basic auth to sensitive endpoint (post-2FA-bypass enumeration)"; \
+    flow:established,to_server; \
+    http.uri; content:"/api/v1/"; startswith; \
+    pcre:"/^\/api\/v1\/(users|server|stores)/i"; \
+    http.header; content:"Authorization|3a 20|Basic "; nocase; \
+    classtype:attempted-admin; \
+    reference:url,github.com/btcpayserver/btcpayserver/pull/7491; \
+    metadata:cwe CWE-287, affected_version 2.4.1, fixed_version 2.4.2; \
+    sid:9100002; rev:1;)
+
+# 3) Response-side: a patched server (v2.4.2+) rejects the bypass with this exact message.
+#    Seeing it means someone is actively trying the 2FA bypass against a patched instance.
+alert http any any -> any any ( \
+    msg:"BTCPAY Greenfield API 2FA bypass attempt blocked by patched handler"; \
+    flow:established,to_client; \
+    file.data; content:"Cannot use Basic authentication when multi-factor is enabled"; nocase; \
+    classtype:attempted-admin; \
+    reference:url,github.com/btcpayserver/btcpayserver/pull/7491; \
+    metadata:cwe CWE-287, fixed_version 2.4.2; \
+    sid:9100003; rev:1;)

@@ -1,0 +1,30 @@
+# OS and editor files
+.DS_Store
+
+# Python
+__pycache__/
+*.py[co]
+*.egg-info/
+
+# Node
+node_modules/
+
+# Lab runtime state: setup scripts keep downloads, images and work files under .lab/
+.lab/
+.refsrc/
+
+# Large downloads and disk images
+*.qcow2
+*.iso
+*.img
+*.wic
+*.deb
+*.zip
+*.tar
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.dmp
+
+# BTCPay lab logs (other directories keep .log files as evidence)
+/btcpay-greenfield-2fa-bypass/**/*.log

@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: >-
+  If you share, publish or build on anything from this repository, credit
+  "al4n4n (Dadb0d)" and link to https://github.com/al4n4n/achilles-heel,
+  or to the directory you used.
+title: achilles-heel
+abstract: >-
+  Vulnerability research with proof. Each directory reproduces a
+  vulnerability in a local lab, with a proof of concept and, where the
+  research produced them, network captures, raw evidence and detection rules.
+type: software
+authors:
+  - alias: "al4n4n (Dadb0d)"
+    website: "https://github.com/al4n4n"
+repository-code: "https://github.com/al4n4n/achilles-heel"
+url: "https://blog.al4n4n.com"
+license: CC-BY-4.0
+keywords:
+  - vulnerability-research
+  - proof-of-concept
+  - detection-engineering
+  - suricata
+  - sigma
+  - yara
+  - pcap

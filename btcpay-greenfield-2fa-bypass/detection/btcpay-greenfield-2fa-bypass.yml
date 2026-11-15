@@ -1,0 +1,73 @@
+# Sigma rules - BTCPay Server Greenfield API TOTP 2FA bypass (PR #7491, fixed in v2.4.2)
+# Author: al4n4n (Dadb0d)
+#
+# Log-level detection. BTCPay's own application log does NOT record Greenfield auth
+# decisions at default verbosity, so these rules target the reverse-proxy / web-server
+# access log that virtually every BTCPay deployment runs in front of the app.
+#
+# They assume the access log captures the Authorization scheme. For nginx, add the header
+# to the log format (value intentionally NOT logged, only the scheme):
+#
+#   log_format btcpay '$remote_addr - $request_method $uri $status '
+#                     'auth="$http_authorization"';
+#
+# Field names below follow the Sigma 'webserver' taxonomy; map cs-authorization to whatever
+# field your pipeline stores the Authorization header in.
+---
+title: BTCPay Greenfield API HTTP Basic Authentication
+id: 7f6a1e2c-4b3d-4c91-9a10-1b2c3d4e5f60
+status: experimental
+description: >
+  Detects HTTP Basic authentication against the BTCPay Server Greenfield API. On
+  vulnerable builds (<= 2.4.1) this is how an attacker bypasses TOTP 2FA (PR #7491);
+  on patched builds Basic auth to the API is disabled by default (PR #7492), so any
+  occurrence is anomalous and worth review.
+references:
+  - https://github.com/btcpayserver/btcpayserver/pull/7491
+  - https://github.com/btcpayserver/btcpayserver/pull/7492
+author: al4n4n (Dadb0d)
+date: 2026/11/04
+tags:
+  - attack.credential_access
+  - attack.t1556            # Modify Authentication Process
+  - cwe.287
+logsource:
+  category: webserver
+detection:
+  greenfield:
+    cs-uri-stem|contains: '/api/v1/'
+  basic_auth:
+    cs-authorization|startswith: 'Basic '
+  condition: greenfield and basic_auth
+falsepositives:
+  - Legitimate Greenfield API clients deliberately using Basic auth within 5 minutes of
+    account creation, or accounts that explicitly re-enabled Basic auth after the fix.
+level: medium
+---
+title: BTCPay Greenfield API Server-Admin Enumeration via Basic Auth
+id: 2b9c8d7e-6f5a-4e3b-8c21-0a1b2c3d4e5f
+status: experimental
+description: >
+  Detects HTTP Basic authentication reaching server-admin and fund-bearing Greenfield
+  endpoints (user list, server info/settings, stores, Lightning node). Combined with the
+  2FA-bypass, these calls expose every user, store and internal Lightning node to an
+  attacker holding only an email + password.
+references:
+  - https://github.com/btcpayserver/btcpayserver/pull/7491
+author: al4n4n (Dadb0d)
+date: 2026/11/04
+tags:
+  - attack.credential_access
+  - attack.t1556
+  - cwe.287
+logsource:
+  category: webserver
+detection:
+  basic_auth:
+    cs-authorization|startswith: 'Basic '
+  sensitive:
+    cs-uri-stem|re: '^/api/v1/(users|server|stores)'
+  condition: basic_auth and sensitive
+falsepositives:
+  - Automated admin tooling that was configured to use Basic auth instead of API keys.
+level: high
