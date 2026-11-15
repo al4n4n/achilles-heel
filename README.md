@@ -50,13 +50,13 @@ Each directory used to be its own repository. Those repositories are archived an
 
 ## How the research is done
 
-The standard new research here is held to:
+Every new entry meets these rules before it is published:
 
-- **Reproduce first.** Nothing is written up until the bug has fired in the lab with observable proof.
-- **Real output only.** Output shown in a README or write-up comes from an actual run.
-- **Real attack path.** The PoC reaches the bug the way an attacker would, as described by the advisory.
-- **Patched control.** Where a fixed build exists, the same PoC runs against it to show the impact is gone.
-- **Detection is labeled honestly.** Rules are tested against the research capture and a benign sample, and are published for education only.
+- **Shown working first.** An entry is written up only after the bug has been triggered in the lab and the result recorded.
+- **Recorded output.** Any output quoted in a README or blog post is copied from a saved run.
+- **The attacker's route.** The PoC reaches the bug through the same entry point an attacker would use, as the advisory describes it.
+- **Fixed build as a control.** When a patched version is available, the same PoC is run against it and the impact disappears.
+- **Detection scope stated.** Each rule is tested on the research capture and one benign sample, and is published for education only.
 
 ## Corrections
 
