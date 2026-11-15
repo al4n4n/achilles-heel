@@ -3,7 +3,6 @@
     "ZDI-CAN-33774"
   ],
   "title": "Linux kernel ksmbd protocol dispatch race condition",
-  "disclosed": "2026-10-20",
-  "cvss": 9.0,
-  "date_note": "No CVE record: the date the fix became public (mainline kernel commit)."
+  "added": "2026-10-24",
+  "cvss": 9.0
 }

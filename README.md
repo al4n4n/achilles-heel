@@ -7,20 +7,20 @@ Each directory covers one vulnerability, or a pair disclosed together: a local l
 ## Latest critical research
 
 <!-- research-table:start -->
-The 10 most recently disclosed critical vulnerabilities (CVSS 9.0 or higher), newest first. All 15 entries, every severity: [INDEX.md](INDEX.md).
+The 10 most recently added critical entries (CVSS 9.0 or higher), newest first. All 15 entries, every severity: [INDEX.md](INDEX.md).
 
 | ID | Vulnerability | CVSS | Included |
 |---|---|---|---|
 | [CVE-2026-116779](CVE-2026-116779/) | FreeSWITCH SIP MESSAGE command execution | 9.8 | PoC · pcap · Suricata · Sigma · raw evidence |
 | [CVE-2026-110186](CVE-2026-110186/) | Langflow code injection via pydoc scanner bypass | 9.8 | PoC · pcap · Suricata · Sigma |
 | [CVE-2026-118306](CVE-2026-118306/) | Chromium FileSystemAccessManagerImpl use-after-free | 9.6 | PoC · Suricata · Sigma |
-| [ZDI-CAN-33549](ZDI-CAN-33549/) | Linux kernel ksmbd SMB Direct integer underflow | 9.0 | PoC · Suricata · Sigma |
-| [CVE-2026-102785](CVE-2026-102785/) | YOOtheme Pro image handler RCE | 10.0 | PoC · pcap · Suricata · Sigma |
-| [CVE-2026-110264](CVE-2026-110264/) | GitLab Onigmo regex integer overflow via org-ruby | 10.0 | PoC |
-| [ZDI-CAN-33774](ZDI-CAN-33774/) | Linux kernel ksmbd protocol dispatch race condition | 9.0 | PoC · Suricata · Sigma |
-| [CVE-2026-98432](CVE-2026-98432/) | Linux kernel TCP/IPv4 race condition use-after-free | 9.8 | PoC · pcap · Suricata · Sigma |
 | [CVE-2026-58115](CVE-2026-58115/) | Siemens SIMATIC IoT2050 Node-RED unauthenticated root RCE | 10.0 | PoC · pcap · Suricata · Sigma |
+| [CVE-2026-98432](CVE-2026-98432/) | Linux kernel TCP/IPv4 race condition use-after-free | 9.8 | PoC · pcap · Suricata · Sigma |
+| [CVE-2026-102785](CVE-2026-102785/) | YOOtheme Pro image handler RCE | 10.0 | PoC · pcap · Suricata · Sigma |
 | [CVE-2026-115560](CVE-2026-115560/) | PHP session upload-progress serialize handler mismatch | 9.8 | PoC · Suricata · Sigma |
+| [ZDI-CAN-33549](ZDI-CAN-33549/) | Linux kernel ksmbd SMB Direct integer underflow | 9.0 | PoC · Suricata · Sigma |
+| [ZDI-CAN-33774](ZDI-CAN-33774/) | Linux kernel ksmbd protocol dispatch race condition | 9.0 | PoC · Suricata · Sigma |
+| [CVE-2026-110264](CVE-2026-110264/) | GitLab Onigmo regex integer overflow via org-ruby | 10.0 | PoC |
 
 CVSS is the score stated in each directory's README.
 <!-- research-table:end -->
@@ -42,7 +42,7 @@ Then follow that directory's README. Most follow the same layout:
 - `capture/`: the network capture of the attack
 - `detection/`: Suricata, Sigma or YARA rules, for education only
 - `evidence/`: the raw output of every run behind each claim (newer directories)
-- `meta.json`: ID, title, disclosure date and CVSS, used to build [INDEX.md](INDEX.md)
+- `meta.json`: ID, title, date added to this repository and CVSS, used to build [INDEX.md](INDEX.md)
 
 Run the labs and PoCs only against targets you set up yourself, ideally in a disposable virtual machine: several of them crash their target on purpose.
 

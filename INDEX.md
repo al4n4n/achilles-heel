@@ -1,6 +1,6 @@
 # Index
 
-All 15 research entries in this repository, newest disclosure first.
+All 15 research entries in this repository, most recently added first.
 
 CVSS is the score stated in each directory's README; severity follows the CVSS v3 rating scale; "—" means no score is stated.
 
@@ -8,26 +8,21 @@ CVSS is the score stated in each directory's README; severity follows the CVSS v
 
 | ID | Vulnerability | CVSS | Severity | Included |
 |---|---|---|---|---|
-| [CVE-2026-125350](CVE-2026-125350/) | Chrome libxslt use-after-free in the pattern match cache | 8.8 | High | PoC · pcap · Suricata · YARA · raw evidence |
 | [CVE-2026-116779](CVE-2026-116779/) | FreeSWITCH SIP MESSAGE command execution | 9.8 | Critical | PoC · pcap · Suricata · Sigma · raw evidence |
+| [CVE-2026-125350](CVE-2026-125350/) | Chrome libxslt use-after-free in the pattern match cache | 8.8 | High | PoC · pcap · Suricata · YARA · raw evidence |
 | [CVE-2026-110186](CVE-2026-110186/) | Langflow code injection via pydoc scanner bypass | 9.8 | Critical | PoC · pcap · Suricata · Sigma |
 | [CVE-2026-118306](CVE-2026-118306/) | Chromium FileSystemAccessManagerImpl use-after-free | 9.6 | Critical | PoC · Suricata · Sigma |
-| [ZDI-CAN-33549](ZDI-CAN-33549/) | Linux kernel ksmbd SMB Direct integer underflow | 9.0 | Critical | PoC · Suricata · Sigma |
-| [CVE-2026-102785](CVE-2026-102785/) | YOOtheme Pro image handler RCE | 10.0 | Critical | PoC · pcap · Suricata · Sigma |
-| [CVE-2026-110264](CVE-2026-110264/) | GitLab Onigmo regex integer overflow via org-ruby | 10.0 | Critical | PoC |
-| [CVE-2026-109618; CVE-2026-109619](CVE-2026-109618-and-CVE-2026-109619/) | PHP use-after-free via zend_bailout (Apache mod_php DoS) | — | — | PoC · pcap |
-| [ZDI-CAN-33774](ZDI-CAN-33774/) | Linux kernel ksmbd protocol dispatch race condition | 9.0 | Critical | PoC · Suricata · Sigma |
-| [CVE-2026-112403](CVE-2026-112403/) | Pillow heap buffer overflow in the JPEG decoder | 7.5 | High | PoC · Suricata · Sigma |
-| [CVE-2026-98432](CVE-2026-98432/) | Linux kernel TCP/IPv4 race condition use-after-free | 9.8 | Critical | PoC · pcap · Suricata · Sigma |
 | [CVE-2026-58115](CVE-2026-58115/) | Siemens SIMATIC IoT2050 Node-RED unauthenticated root RCE | 10.0 | Critical | PoC · pcap · Suricata · Sigma |
 | [btcpay-greenfield-2fa-bypass](btcpay-greenfield-2fa-bypass/) | BTCPay Server Greenfield API TOTP 2FA bypass | 8.8 | High | PoC · pcap · Suricata · Sigma |
-| [CVE-2026-25253](CVE-2026-25253/) | OpenClaw one-click RCE via token theft and cross-site WebSocket hijacking | — | — | PoC |
-
-## Not yet published
-
-| ID | Vulnerability | CVSS | Severity | Included |
-|---|---|---|---|---|
+| [CVE-2026-98432](CVE-2026-98432/) | Linux kernel TCP/IPv4 race condition use-after-free | 9.8 | Critical | PoC · pcap · Suricata · Sigma |
+| [CVE-2026-102785](CVE-2026-102785/) | YOOtheme Pro image handler RCE | 10.0 | Critical | PoC · pcap · Suricata · Sigma |
 | [CVE-2026-115560](CVE-2026-115560/) | PHP session upload-progress serialize handler mismatch | 9.8 | Critical | PoC · Suricata · Sigma |
+| [ZDI-CAN-33549](ZDI-CAN-33549/) | Linux kernel ksmbd SMB Direct integer underflow | 9.0 | Critical | PoC · Suricata · Sigma |
+| [ZDI-CAN-33774](ZDI-CAN-33774/) | Linux kernel ksmbd protocol dispatch race condition | 9.0 | Critical | PoC · Suricata · Sigma |
+| [CVE-2026-112403](CVE-2026-112403/) | Pillow heap buffer overflow in the JPEG decoder | 7.5 | High | PoC · Suricata · Sigma |
+| [CVE-2026-110264](CVE-2026-110264/) | GitLab Onigmo regex integer overflow via org-ruby | 10.0 | Critical | PoC |
+| [CVE-2026-109618; CVE-2026-109619](CVE-2026-109618-and-CVE-2026-109619/) | PHP use-after-free via zend_bailout (Apache mod_php DoS) | — | — | PoC · pcap |
+| [CVE-2026-25253](CVE-2026-25253/) | OpenClaw one-click RCE via token theft and cross-site WebSocket hijacking | — | — | PoC |
 
 ---
 

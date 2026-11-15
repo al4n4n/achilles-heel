@@ -3,7 +3,6 @@
     "btcpay-greenfield-2fa-bypass"
   ],
   "title": "BTCPay Server Greenfield API TOTP 2FA bypass",
-  "disclosed": "2026-08-04",
-  "cvss": 8.8,
-  "date_note": "No CVE record: the date the fix became public (merged fix PR)."
+  "added": "2026-11-04",
+  "cvss": 8.8
 }
