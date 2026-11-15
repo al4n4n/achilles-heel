@@ -1,6 +1,6 @@
 # Index
 
-All 15 research entries in this repository, most recently added first.
+All 16 research entries in this repository, most recently added first.
 
 CVSS is the score stated in each directory's README; severity follows the CVSS v3 rating scale; "—" means no score is stated.
 
@@ -8,6 +8,7 @@ CVSS is the score stated in each directory's README; severity follows the CVSS v
 
 | ID | Vulnerability | CVSS | Severity | Included |
 |---|---|---|---|---|
+| [CVE-2026-128067](CVE-2026-128067/) | Pillow libtiff encoder heap buffer overflow via geometry tag overrides | 8.4 | High | PoC · pcap · Suricata · Sigma · raw evidence |
 | [CVE-2026-116779](CVE-2026-116779/) | FreeSWITCH SIP MESSAGE command execution | 9.8 | Critical | PoC · pcap · Suricata · Sigma · raw evidence |
 | [CVE-2026-125350](CVE-2026-125350/) | Chrome libxslt use-after-free in the pattern match cache | 8.8 | High | PoC · pcap · Suricata · YARA · raw evidence |
 | [CVE-2026-110186](CVE-2026-110186/) | Langflow code injection via pydoc scanner bypass | 9.8 | Critical | PoC · pcap · Suricata · Sigma |
