@@ -7,7 +7,7 @@ Each directory covers one vulnerability, or a pair disclosed together: a local l
 ## Latest critical research
 
 <!-- research-table:start -->
-The 10 most recently added critical entries (CVSS 9.0 or higher), newest first. All 17 entries, every severity: [INDEX.md](INDEX.md).
+The 10 most recently added critical entries (CVSS 9.0 or higher), newest first. All 19 entries, every severity: [INDEX.md](INDEX.md).
 
 | ID | Vulnerability | CVSS | Included |
 |---|---|---|---|
