@@ -11,6 +11,7 @@ The 10 most recently added critical entries (CVSS 9.0 or higher), newest first. 
 
 | ID | Vulnerability | CVSS | Included |
 |---|---|---|---|
+| [CVE-2026-129433](CVE-2026-129433/) | Dokploy backup command injection via serviceName | 9.9 | Suricata · Sigma · raw evidence |
 | [CVE-2026-116779](CVE-2026-116779/) | FreeSWITCH SIP MESSAGE command execution | 9.8 | PoC · pcap · Suricata · Sigma · raw evidence |
 | [CVE-2026-110186](CVE-2026-110186/) | Langflow code injection via pydoc scanner bypass | 9.8 | PoC · pcap · Suricata · Sigma |
 | [CVE-2026-118306](CVE-2026-118306/) | Chromium FileSystemAccessManagerImpl use-after-free | 9.6 | PoC · Suricata · Sigma |
@@ -20,7 +21,6 @@ The 10 most recently added critical entries (CVSS 9.0 or higher), newest first. 
 | [CVE-2026-115560](CVE-2026-115560/) | PHP session upload-progress serialize handler mismatch | 9.8 | PoC · Suricata · Sigma |
 | [ZDI-CAN-33549](ZDI-CAN-33549/) | Linux kernel ksmbd SMB Direct integer underflow | 9.0 | PoC · Suricata · Sigma |
 | [ZDI-CAN-33774](ZDI-CAN-33774/) | Linux kernel ksmbd protocol dispatch race condition | 9.0 | PoC · Suricata · Sigma |
-| [CVE-2026-110264](CVE-2026-110264/) | GitLab Onigmo regex integer overflow via org-ruby | 10.0 | PoC |
 
 CVSS is the score stated in each directory's README.
 <!-- research-table:end -->
