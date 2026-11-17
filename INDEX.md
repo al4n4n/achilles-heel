@@ -1,6 +1,6 @@
 # Index
 
-All 17 research entries in this repository, most recently added first.
+All 18 research entries in this repository, most recently added first.
 
 CVSS is the score stated in each directory's README; severity follows the CVSS v3 rating scale; "—" means no score is stated.
 
@@ -8,6 +8,7 @@ CVSS is the score stated in each directory's README; severity follows the CVSS v
 
 | ID | Vulnerability | CVSS | Severity | Included |
 |---|---|---|---|---|
+| [CVE-2026-104007](CVE-2026-104007/) | LibreOffice JDBC driver code execution via pivot table ODB fetch | 8.5 | High | PoC · pcap · Suricata · YARA · raw evidence |
 | [CVE-2026-123874](CVE-2026-123874/) | Node.js HTTP/2 use-after-free via respondWithFile stream reset | 7.5 | High | PoC · pcap · Suricata · Sigma · raw evidence |
 | [CVE-2026-128067](CVE-2026-128067/) | Pillow libtiff encoder heap buffer overflow via geometry tag overrides | 8.4 | High | PoC · pcap · Suricata · Sigma · raw evidence |
 | [CVE-2026-116779](CVE-2026-116779/) | FreeSWITCH SIP MESSAGE command execution | 9.8 | Critical | PoC · pcap · Suricata · Sigma · raw evidence |
