@@ -4,23 +4,23 @@ Every application has one. This repository documents them, with proof.
 
 Each directory covers one vulnerability, or a pair disclosed together: a local lab that builds the affected software, a proof of concept that reproduces the bug through the real attack surface, and, where the research produced them, network captures, raw evidence and experimental detection rules. The point of all of it is defense: detection rules and captures that the security community can build on.
 
-## Latest critical research
+## Latest research
 
 <!-- research-table:start -->
-The 10 most recently added critical entries (CVSS 9.0 or higher), newest first. All 19 entries, every severity: [INDEX.md](INDEX.md).
+The 10 most recently added entries with CVSS above 8.0, newest first. All 19 entries, every severity: [INDEX.md](INDEX.md).
 
 | ID | Vulnerability | CVSS | Included |
 |---|---|---|---|
+| [CVE-2026-114938](CVE-2026-114938/) | OpenJDK HotSpot AVX-512 Base64 decode heap overflow via HTTP Basic auth | 8.1 | PoC · pcap · Suricata · raw evidence |
+| [CVE-2026-104007](CVE-2026-104007/) | LibreOffice JDBC driver code execution via pivot table ODB fetch | 8.5 | PoC · pcap · Suricata · YARA · raw evidence |
+| [CVE-2026-128067](CVE-2026-128067/) | Pillow libtiff encoder heap buffer overflow via geometry tag overrides | 8.4 | PoC · pcap · Suricata · Sigma · raw evidence |
 | [CVE-2026-116779](CVE-2026-116779/) | FreeSWITCH SIP MESSAGE command execution | 9.8 | PoC · pcap · Suricata · Sigma · raw evidence |
+| [CVE-2026-125350](CVE-2026-125350/) | Chrome libxslt use-after-free in the pattern match cache | 8.8 | PoC · pcap · Suricata · YARA · raw evidence |
 | [CVE-2026-110186](CVE-2026-110186/) | Langflow code injection via pydoc scanner bypass | 9.8 | PoC · pcap · Suricata · Sigma |
 | [CVE-2026-118306](CVE-2026-118306/) | Chromium FileSystemAccessManagerImpl use-after-free | 9.6 | PoC · Suricata · Sigma |
 | [CVE-2026-58115](CVE-2026-58115/) | Siemens SIMATIC IoT2050 Node-RED unauthenticated root RCE | 10.0 | PoC · pcap · Suricata · Sigma |
+| [btcpay-greenfield-2fa-bypass](btcpay-greenfield-2fa-bypass/) | BTCPay Server Greenfield API TOTP 2FA bypass | 8.8 | PoC · pcap · Suricata · Sigma |
 | [CVE-2026-98432](CVE-2026-98432/) | Linux kernel TCP/IPv4 race condition use-after-free | 9.8 | PoC · pcap · Suricata · Sigma |
-| [CVE-2026-102785](CVE-2026-102785/) | YOOtheme Pro image handler RCE | 10.0 | PoC · pcap · Suricata · Sigma |
-| [CVE-2026-115560](CVE-2026-115560/) | PHP session upload-progress serialize handler mismatch | 9.8 | PoC · Suricata · Sigma |
-| [ZDI-CAN-33549](ZDI-CAN-33549/) | Linux kernel ksmbd SMB Direct integer underflow | 9.0 | PoC · Suricata · Sigma |
-| [ZDI-CAN-33774](ZDI-CAN-33774/) | Linux kernel ksmbd protocol dispatch race condition | 9.0 | PoC · Suricata · Sigma |
-| [CVE-2026-110264](CVE-2026-110264/) | GitLab Onigmo regex integer overflow via org-ruby | 10.0 | PoC |
 
 CVSS is the score stated in each directory's README.
 <!-- research-table:end -->
