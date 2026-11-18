@@ -11,7 +11,8 @@ import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-LATEST_CRITICAL = 10
+LATEST = 10
+MIN_CVSS = 8.0
 START, END = "<!-- research-table:start -->", "<!-- research-table:end -->"
 
 
@@ -68,12 +69,12 @@ def table(entries, with_severity):
 
 
 def readme_block(entries):
-    critical = [m for m in entries if severity(m["cvss"]) == "Critical"][:LATEST_CRITICAL]
+    shown = [m for m in entries if m["cvss"] is not None and m["cvss"] > MIN_CVSS][:LATEST]
     return "\n".join([
         START,
-        f"The {len(critical)} most recently added critical entries (CVSS 9.0 or higher), newest first. "
+        f"The {len(shown)} most recently added entries with CVSS above {MIN_CVSS:.1f}, newest first. "
         f"All {len(entries)} entries, every severity: [INDEX.md](INDEX.md).",
-        "", table(critical, with_severity=False), "",
+        "", table(shown, with_severity=False), "",
         "CVSS is the score stated in each directory's README.",
         END])
 
