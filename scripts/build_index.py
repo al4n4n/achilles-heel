@@ -1,18 +1,22 @@
 #!/usr/bin/env python3
 # Author: al4n4n (Dadb0d)
-"""Rebuild the README research table and INDEX.md from each directory's meta.json.
+"""Validate research metadata and rebuild the catalogs and entry citations.
 
 Usage: python3 scripts/build_index.py [--check]
 """
 import argparse
 import json
 import pathlib
-import re
 import sys
+from urllib.parse import quote
+
+from jsonschema import Draft202012Validator, FormatChecker
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LATEST_CRITICAL = 10
 START, END = "<!-- research-table:start -->", "<!-- research-table:end -->"
+CITE_START, CITE_END = "<!-- citation:start -->", "<!-- citation:end -->"
+REPO_URL = "https://github.com/al4n4n/achilles-heel"
 
 
 def severity(cvss):
@@ -44,12 +48,20 @@ def included(d):
 
 
 def load():
+    schema = json.loads((ROOT / "schemas/research-entry.schema.json").read_text())
+    validator = Draft202012Validator(schema, format_checker=FormatChecker())
     entries = []
     for meta in sorted(ROOT.glob("*/meta.json")):
-        m = json.loads(meta.read_text())
-        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(m.get("added"))):
-            sys.exit(f"{meta.relative_to(ROOT)}: \"added\" must be the date the entry was added (YYYY-MM-DD)")
+        try:
+            m = json.loads(meta.read_text())
+        except ValueError as error:
+            sys.exit(f"{meta.relative_to(ROOT)}: {error}")
+        for error in validator.iter_errors(m):
+            sys.exit(f"{meta.relative_to(ROOT)} at {error.json_path}: {error.message}")
+        if not meta.with_name("README.md").is_file():
+            sys.exit(f"{meta.relative_to(ROOT)} requires an entry README.md")
         m["dir"] = meta.parent.name
+        m["entry_url"] = f"{REPO_URL}/tree/main/{quote(meta.parent.name)}"
         m["included"] = included(meta.parent)
         entries.append(m)
     entries.sort(key=lambda m: m["ids"][0])
@@ -59,22 +71,42 @@ def load():
 
 def table(entries, with_severity):
     head = "| ID | Vulnerability | CVSS |" + (" Severity |" if with_severity else "") + " Included |"
+    if with_severity:
+        head += " Write-up |"
     rows = [head, "|" + "---|" * (head.count("|") - 1)]
     for m in entries:
         cvss = "—" if m["cvss"] is None else f"{m['cvss']:.1f}"
         sev = f" {severity(m['cvss'])} |" if with_severity else ""
         rows.append(f"| [{'; '.join(m['ids'])}]({m['dir']}/) | {m['title']} | {cvss} |{sev} {m['included']} |")
+        if with_severity:
+            rows[-1] += f" [Article]({m['writeup']}) |" if m["writeup"] else " — |"
     return "\n".join(rows)
 
 
 def readme_block(entries):
     critical = [m for m in entries if severity(m["cvss"]) == "Critical"][:LATEST_CRITICAL]
+    cves = {}
+    for entry in entries:
+        for identifier in entry["ids"]:
+            if identifier.startswith("CVE-"):
+                if identifier in cves:
+                    sys.exit(f"{identifier} appears in both {cves[identifier]} and {entry['dir']}")
+                cves[identifier] = entry["dir"]
+    groups = {}
+    for identifier in sorted(cves, key=lambda value: int(value.split("-")[2])):
+        year = identifier.split("-")[1]
+        groups.setdefault(year, []).append(f"[{identifier}]({cves[identifier]}/)")
+    browse = ["<details>", f"<summary>Browse all {len(cves)} CVE IDs</summary>", ""]
+    for year in sorted(groups, reverse=True):
+        browse.extend([f"**{year}**", "", " ·\n".join(groups[year]), ""])
+    browse.append("</details>")
     return "\n".join([
         START,
         f"The {len(critical)} most recently added critical entries (CVSS 9.0 or higher), newest first. "
         f"All {len(entries)} entries, every severity: [INDEX.md](INDEX.md).",
         "", table(critical, with_severity=False), "",
         "CVSS is the score stated in each directory's README.",
+        "", *browse, "",
         END])
 
 
@@ -92,27 +124,50 @@ def index_md(entries):
     return "\n".join(out) + "\n"
 
 
+def replace_block(path, start, end, block, append=False):
+    source = path.read_text()
+    if append and start not in source and end not in source:
+        return source.rstrip("\n") + "\n\n" + block + "\n"
+    if source.count(start) != 1 or source.count(end) != 1 or source.index(start) > source.index(end):
+        sys.exit(f"{path.relative_to(ROOT)}: expected one ordered pair of {start} and {end} markers")
+    return source[:source.index(start)] + block + source[source.index(end) + len(end):]
+
+
+def citation(entry):
+    authors = ", ".join(entry["authors"])
+    ids = ", ".join(entry["ids"])
+    article = f" [Research article]({entry['writeup']})." if entry["writeup"] else ""
+    return "\n".join([CITE_START, "## Cite this research", "",
+                      f"> {authors}. {entry['title']} ({ids}). *achilles-heel*, added {entry['added']}. "
+                      f"<{entry['entry_url']}>.{article}", CITE_END])
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--check", action="store_true", help="exit 1 if README.md or INDEX.md is out of date")
+    ap.add_argument("--check", action="store_true", help="exit 1 if any generated content is out of date")
     args = ap.parse_args()
     entries = load()
-    readme_path, index_path = ROOT / "README.md", ROOT / "INDEX.md"
-    readme = readme_path.read_text()
-    if START not in readme or END not in readme:
-        sys.exit(f"README.md is missing the {START} / {END} markers")
-    new_readme = re.sub(re.escape(START) + ".*?" + re.escape(END), lambda _: readme_block(entries), readme, flags=re.S)
-    new_index = index_md(entries)
-    stale = [p.name for p, new in ((readme_path, new_readme), (index_path, new_index))
-             if not p.exists() or p.read_text() != new]
+    readme = ROOT / "README.md"
+    records = [{key: value for key, value in entry.items() if key != "included"} for entry in entries]
+    catalog = {"schema_version": 2, "entries": records}
+    outputs = {
+        readme: replace_block(readme, START, END, readme_block(entries)),
+        ROOT / "INDEX.md": index_md(entries),
+        ROOT / "index.json": json.dumps(catalog, ensure_ascii=False, indent=2) + "\n",
+    }
+    for entry in entries:
+        path = ROOT / entry["dir"] / "README.md"
+        outputs[path] = replace_block(path, CITE_START, CITE_END, citation(entry), append=True)
+    stale = [p for p, content in outputs.items() if not p.exists() or p.read_text() != content]
+    names = ", ".join(str(p.relative_to(ROOT)) for p in stale)
     if args.check:
         if stale:
-            sys.exit("out of date: " + ", ".join(stale) + " (run python3 scripts/build_index.py)")
+            sys.exit(f"out of date: {names} (run python3 scripts/build_index.py)")
         print("up to date")
         return
-    readme_path.write_text(new_readme)
-    index_path.write_text(new_index)
-    print(f"{len(entries)} entries; updated: {', '.join(stale) or 'nothing'}")
+    for path in stale:
+        path.write_text(outputs[path])
+    print(f"{len(entries)} entries; updated: {names or 'nothing'}")
 
 
 if __name__ == "__main__":

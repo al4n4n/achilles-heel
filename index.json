@@ -1,0 +1,313 @@
+{
+  "schema_version": 2,
+  "entries": [
+    {
+      "ids": [
+        "CVE-2026-114938"
+      ],
+      "title": "OpenJDK HotSpot AVX-512 Base64 decode heap overflow via HTTP Basic auth",
+      "added": "2026-11-18",
+      "cvss": 8.1,
+      "type": "library",
+      "authors": [
+        "al4n4n (Dadb0d)"
+      ],
+      "writeup": "https://blog.al4n4n.com/CVE-2026-114938-Java4Shell-AVX512-Base64-Heap-Overflow/",
+      "affected_product": "OpenJDK",
+      "rce_achieved": null,
+      "dir": "CVE-2026-114938",
+      "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-114938"
+    },
+    {
+      "ids": [
+        "CVE-2026-104007"
+      ],
+      "title": "LibreOffice JDBC driver code execution via pivot table ODB fetch",
+      "added": "2026-11-16",
+      "cvss": 8.5,
+      "type": "client",
+      "authors": [
+        "al4n4n (Dadb0d)"
+      ],
+      "writeup": "https://blog.al4n4n.com/CVE-2026-104007-LibreOffice-JDBC-Pivot-Table-RCE/",
+      "affected_product": "LibreOffice",
+      "rce_achieved": null,
+      "dir": "CVE-2026-104007",
+      "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-104007"
+    },
+    {
+      "ids": [
+        "CVE-2026-123874"
+      ],
+      "title": "Node.js HTTP/2 use-after-free via respondWithFile stream reset",
+      "added": "2026-11-16",
+      "cvss": 7.5,
+      "type": "library",
+      "authors": [
+        "al4n4n (Dadb0d)"
+      ],
+      "writeup": "https://blog.al4n4n.com/CVE-2026-123874-Node-HTTP2-Use-After-Free/",
+      "affected_product": "Node.js",
+      "rce_achieved": null,
+      "dir": "CVE-2026-123874",
+      "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-123874"
+    },
+    {
+      "ids": [
+        "CVE-2026-128067"
+      ],
+      "title": "Pillow libtiff encoder heap buffer overflow via geometry tag overrides",
+      "added": "2026-11-15",
+      "cvss": 8.4,
+      "authors": [
+        "al4n4n (Dadb0d)"
+      ],
+      "writeup": "https://blog.al4n4n.com/CVE-2026-128067-Pillow-libtiff-Heap-Buffer-Overflow/",
+      "affected_product": "Pillow",
+      "rce_achieved": null,
+      "dir": "CVE-2026-128067",
+      "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-128067"
+    },
+    {
+      "ids": [
+        "CVE-2026-116779"
+      ],
+      "title": "FreeSWITCH SIP MESSAGE command execution",
+      "added": "2026-11-14",
+      "cvss": 9.8,
+      "authors": [
+        "al4n4n (Dadb0d)"
+      ],
+      "writeup": "https://blog.al4n4n.com/CVE-2026-116779-FreeSWITCH-SIP-MESSAGE-Command-Execution/",
+      "affected_product": "FreeSWITCH",
+      "rce_achieved": null,
+      "dir": "CVE-2026-116779",
+      "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-116779"
+    },
+    {
+      "ids": [
+        "CVE-2026-125350"
+      ],
+      "title": "Chrome libxslt use-after-free in the pattern match cache",
+      "added": "2026-11-13",
+      "cvss": 8.8,
+      "authors": [
+        "al4n4n (Dadb0d)"
+      ],
+      "writeup": "https://blog.al4n4n.com/CVE-2026-125350-Chrome-libxslt-UAF-Pattern-Cache-Reentrancy/",
+      "affected_product": "Google Chrome",
+      "rce_achieved": null,
+      "dir": "CVE-2026-125350",
+      "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-125350"
+    },
+    {
+      "ids": [
+        "CVE-2026-110186"
+      ],
+      "title": "Langflow code injection via pydoc scanner bypass",
+      "added": "2026-11-04",
+      "cvss": 9.8,
+      "authors": [
+        "al4n4n (Dadb0d)"
+      ],
+      "writeup": "https://blog.al4n4n.com/CVE-2026-110186-Langflow-Code-Injection-pydoc-Scanner-Bypass/",
+      "affected_product": "Langflow",
+      "rce_achieved": null,
+      "dir": "CVE-2026-110186",
+      "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-110186"
+    },
+    {
+      "ids": [
+        "CVE-2026-118306"
+      ],
+      "title": "Chromium FileSystemAccessManagerImpl use-after-free",
+      "added": "2026-11-04",
+      "cvss": 9.6,
+      "authors": [
+        "al4n4n (Dadb0d)"
+      ],
+      "writeup": "https://blog.al4n4n.com/CVE-2026-118306-Chromium-FileSystem-UAF-Synchronous-Lock-Promotion/",
+      "affected_product": "Chromium",
+      "rce_achieved": null,
+      "dir": "CVE-2026-118306",
+      "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-118306"
+    },
+    {
+      "ids": [
+        "CVE-2026-58115"
+      ],
+      "title": "Siemens SIMATIC IoT2050 Node-RED unauthenticated root RCE",
+      "added": "2026-11-04",
+      "cvss": 10.0,
+      "authors": [
+        "al4n4n (Dadb0d)"
+      ],
+      "writeup": "https://blog.al4n4n.com/CVE-2026-58115-Siemens-IoT2050-Node-RED-Unauthenticated-Root-RCE/",
+      "affected_product": "Siemens SIMATIC IoT2050",
+      "rce_achieved": null,
+      "dir": "CVE-2026-58115",
+      "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-58115"
+    },
+    {
+      "ids": [
+        "btcpay-greenfield-2fa-bypass"
+      ],
+      "title": "BTCPay Server Greenfield API TOTP 2FA bypass",
+      "added": "2026-11-04",
+      "cvss": 8.8,
+      "authors": [
+        "al4n4n (Dadb0d)"
+      ],
+      "writeup": "https://blog.al4n4n.com/btcpay-greenfield-2fa-bypass/",
+      "affected_product": "BTCPay Server",
+      "rce_achieved": null,
+      "dir": "btcpay-greenfield-2fa-bypass",
+      "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/btcpay-greenfield-2fa-bypass"
+    },
+    {
+      "ids": [
+        "CVE-2026-98432"
+      ],
+      "title": "Linux kernel TCP/IPv4 race condition use-after-free",
+      "added": "2026-11-02",
+      "cvss": 9.8,
+      "authors": [
+        "al4n4n (Dadb0d)"
+      ],
+      "writeup": "https://blog.al4n4n.com/CVE-2026-98432-Linux-Kernel-TCP-Race-UAF/",
+      "affected_product": "Linux kernel",
+      "rce_achieved": null,
+      "dir": "CVE-2026-98432",
+      "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-98432"
+    },
+    {
+      "ids": [
+        "CVE-2026-102785"
+      ],
+      "title": "YOOtheme Pro image handler RCE",
+      "added": "2026-10-27",
+      "cvss": 10.0,
+      "authors": [
+        "al4n4n (Dadb0d)"
+      ],
+      "writeup": "https://blog.al4n4n.com/CVE-2026-102785-YOOtheme-Pro-Image-Handler-RCE/",
+      "affected_product": "YOOtheme Pro",
+      "rce_achieved": null,
+      "dir": "CVE-2026-102785",
+      "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-102785"
+    },
+    {
+      "ids": [
+        "CVE-2026-115560"
+      ],
+      "title": "PHP session upload-progress serialize handler mismatch",
+      "added": "2026-10-25",
+      "cvss": 9.8,
+      "authors": [
+        "al4n4n (Dadb0d)"
+      ],
+      "writeup": "https://blog.al4n4n.com/CVE-2026-115560-PHP-Session-Upload-Progress-RCE/",
+      "affected_product": "PHP",
+      "rce_achieved": null,
+      "dir": "CVE-2026-115560",
+      "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-115560"
+    },
+    {
+      "ids": [
+        "ZDI-CAN-33549"
+      ],
+      "title": "Linux kernel ksmbd SMB Direct integer underflow",
+      "added": "2026-10-24",
+      "cvss": 9.0,
+      "authors": [
+        "al4n4n (Dadb0d)"
+      ],
+      "writeup": "https://blog.al4n4n.com/ZDI-CAN-33549-ksmbd-SMB-Direct-Integer-Underflow/",
+      "affected_product": "Linux kernel ksmbd",
+      "rce_achieved": null,
+      "dir": "ZDI-CAN-33549",
+      "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/ZDI-CAN-33549"
+    },
+    {
+      "ids": [
+        "ZDI-CAN-33774"
+      ],
+      "title": "Linux kernel ksmbd protocol dispatch race condition",
+      "added": "2026-10-24",
+      "cvss": 9.0,
+      "authors": [
+        "al4n4n (Dadb0d)"
+      ],
+      "writeup": "https://blog.al4n4n.com/ZDI-CAN-33774-ksmbd-Protocol-Dispatch-Race-Condition/",
+      "affected_product": "Linux kernel ksmbd",
+      "rce_achieved": null,
+      "dir": "ZDI-CAN-33774",
+      "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/ZDI-CAN-33774"
+    },
+    {
+      "ids": [
+        "CVE-2026-112403"
+      ],
+      "title": "Pillow heap buffer overflow in the JPEG decoder",
+      "added": "2026-10-23",
+      "cvss": 7.5,
+      "authors": [
+        "al4n4n (Dadb0d)"
+      ],
+      "writeup": "https://blog.al4n4n.com/CVE-2026-112403-Pillow-Heap-Buffer-Overflow-JPEG-Decoder/",
+      "affected_product": "Pillow",
+      "rce_achieved": null,
+      "dir": "CVE-2026-112403",
+      "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-112403"
+    },
+    {
+      "ids": [
+        "CVE-2026-110264"
+      ],
+      "title": "GitLab Onigmo regex integer overflow via org-ruby",
+      "added": "2026-10-22",
+      "cvss": 10.0,
+      "authors": [
+        "al4n4n (Dadb0d)"
+      ],
+      "writeup": "https://blog.al4n4n.com/CVE-2026-110264-GitLab-Onigmo-Regex-Integer-Overflow/",
+      "affected_product": "GitLab",
+      "rce_achieved": null,
+      "dir": "CVE-2026-110264",
+      "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-110264"
+    },
+    {
+      "ids": [
+        "CVE-2026-109618",
+        "CVE-2026-109619"
+      ],
+      "title": "PHP use-after-free via zend_bailout (Apache mod_php DoS)",
+      "added": "2026-10-21",
+      "cvss": null,
+      "authors": [
+        "al4n4n (Dadb0d)"
+      ],
+      "writeup": "https://blog.al4n4n.com/CVE-2026-109618-CVE-2026-109619-PHP-UAF-zend-bailout/",
+      "affected_product": "PHP",
+      "rce_achieved": null,
+      "dir": "CVE-2026-109618-and-CVE-2026-109619",
+      "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-109618-and-CVE-2026-109619"
+    },
+    {
+      "ids": [
+        "CVE-2026-25253"
+      ],
+      "title": "OpenClaw one-click RCE via token theft and cross-site WebSocket hijacking",
+      "added": "2026-02-08",
+      "cvss": null,
+      "authors": [
+        "al4n4n (Dadb0d)"
+      ],
+      "writeup": "https://blog.al4n4n.com/CVE-2026-25253-OpenClaw-One-Click-RCE-Analysis/",
+      "affected_product": "OpenClaw",
+      "rce_achieved": null,
+      "dir": "CVE-2026-25253",
+      "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-25253"
+    }
+  ]
+}

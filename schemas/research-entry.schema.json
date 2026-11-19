@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "achilles-heel research entry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["ids", "title", "authors", "added", "cvss", "writeup", "affected_product", "rce_achieved"],
+  "properties": {
+    "ids": {
+      "description": "Public identifiers or stable local slugs covered by this entry, primary ID first.",
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "oneOf": [
+          {"pattern": "^CVE-[0-9]{4}-[0-9]{4,}$"},
+          {"pattern": "^ZDI-CAN-[0-9]+$"},
+          {"pattern": "^GHSA-[23456789cfghjmpqrvwx]{4}(-[23456789cfghjmpqrvwx]{4}){2}$"},
+          {"pattern": "^(?!cve-|ghsa-|zdi-can-)[a-z0-9]+(-[a-z0-9]+)*$"}
+        ]
+      }
+    },
+    "title": {"$ref": "#/$defs/text"},
+    "affected_product": {"$ref": "#/$defs/text"},
+    "rce_achieved": {
+      "description": "Contributor-reported remote code execution outcome in this study. Null means unassessed or inconclusive.",
+      "type": ["boolean", "null"]
+    },
+    "authors": {
+      "description": "Authors of this research entry, in citation order.",
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "added": {"type": "string", "format": "date", "description": "Date this entry was added to the repository."},
+    "cvss": {"type": ["number", "null"], "minimum": 0, "maximum": 10},
+    "writeup": {
+      "description": "Direct URL of the public research article, or null until published.",
+      "type": ["string", "null"], "pattern": "^https?://[^/\\s?#]+/[^\\s<>]+$"
+    },
+    "type": {"$ref": "#/$defs/text", "description": "Optional classification of the affected component."}
+  },
+  "$defs": {
+    "text": {"type": "string", "pattern": "^\\S(?:[^\\r\\n]*\\S)?$"}
+  }
+}

@@ -4,5 +4,11 @@
   ],
   "title": "Linux kernel ksmbd protocol dispatch race condition",
   "added": "2026-10-24",
-  "cvss": 9.0
+  "cvss": 9.0,
+  "authors": [
+    "al4n4n (Dadb0d)"
+  ],
+  "writeup": "https://blog.al4n4n.com/ZDI-CAN-33774-ksmbd-Protocol-Dispatch-Race-Condition/",
+  "affected_product": "Linux kernel ksmbd",
+  "rce_achieved": null
 }
