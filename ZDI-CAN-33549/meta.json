@@ -10,5 +10,5 @@
   ],
   "writeup": "https://blog.al4n4n.com/ZDI-CAN-33549-ksmbd-SMB-Direct-Integer-Underflow/",
   "affected_product": "Linux kernel ksmbd",
-  "impact_achieved": "KASAN detected an out-of-bounds heap write in the SMB Direct implementation."
+  "rce_achieved": null
 }

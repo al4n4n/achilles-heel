@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "entries": [
     {
       "ids": [
@@ -14,7 +14,7 @@
       ],
       "writeup": "https://blog.al4n4n.com/CVE-2026-114938-Java4Shell-AVX512-Base64-Heap-Overflow/",
       "affected_product": "OpenJDK",
-      "impact_achieved": "Heap corruption crashed Jenkins running on the affected Amazon Corretto JVM.",
+      "rce_achieved": null,
       "dir": "CVE-2026-114938",
       "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-114938"
     },
@@ -31,7 +31,7 @@
       ],
       "writeup": "https://blog.al4n4n.com/CVE-2026-104007-LibreOffice-JDBC-Pivot-Table-RCE/",
       "affected_product": "LibreOffice",
-      "impact_achieved": "Opening a spreadsheet ran code with the privileges of the LibreOffice process.",
+      "rce_achieved": null,
       "dir": "CVE-2026-104007",
       "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-104007"
     },
@@ -48,7 +48,7 @@
       ],
       "writeup": "https://blog.al4n4n.com/CVE-2026-123874-Node-HTTP2-Use-After-Free/",
       "affected_product": "Node.js",
-      "impact_achieved": "AddressSanitizer reported a heap use-after-free and the HTTP/2 server crashed.",
+      "rce_achieved": null,
       "dir": "CVE-2026-123874",
       "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-123874"
     },
@@ -64,7 +64,7 @@
       ],
       "writeup": "https://blog.al4n4n.com/CVE-2026-128067-Pillow-libtiff-Heap-Buffer-Overflow/",
       "affected_product": "Pillow",
-      "impact_achieved": "The output TIFF exposed process heap data. Additional test cases corrupted memory or crashed the image-processing service.",
+      "rce_achieved": null,
       "dir": "CVE-2026-128067",
       "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-128067"
     },
@@ -80,7 +80,7 @@
       ],
       "writeup": "https://blog.al4n4n.com/CVE-2026-116779-FreeSWITCH-SIP-MESSAGE-Command-Execution/",
       "affected_product": "FreeSWITCH",
-      "impact_achieved": "Operating system commands ran with the privileges of the FreeSWITCH process.",
+      "rce_achieved": null,
       "dir": "CVE-2026-116779",
       "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-116779"
     },
@@ -96,7 +96,7 @@
       ],
       "writeup": "https://blog.al4n4n.com/CVE-2026-125350-Chrome-libxslt-UAF-Pattern-Cache-Reentrancy/",
       "affected_product": "Google Chrome",
-      "impact_achieved": "The sandboxed renderer crashed in stock Chrome on Linux.",
+      "rce_achieved": null,
       "dir": "CVE-2026-125350",
       "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-125350"
     },
@@ -112,7 +112,7 @@
       ],
       "writeup": "https://blog.al4n4n.com/CVE-2026-110186-Langflow-Code-Injection-pydoc-Scanner-Bypass/",
       "affected_product": "Langflow",
-      "impact_achieved": "Commands ran with the privileges of the Langflow service in the tested configuration.",
+      "rce_achieved": null,
       "dir": "CVE-2026-110186",
       "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-110186"
     },
@@ -128,7 +128,7 @@
       ],
       "writeup": "https://blog.al4n4n.com/CVE-2026-118306-Chromium-FileSystem-UAF-Synchronous-Lock-Promotion/",
       "affected_product": "Chromium",
-      "impact_achieved": "A binary-patched AddressSanitizer build reached the pending file-lock state.",
+      "rce_achieved": null,
       "dir": "CVE-2026-118306",
       "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-118306"
     },
@@ -144,7 +144,7 @@
       ],
       "writeup": "https://blog.al4n4n.com/CVE-2026-58115-Siemens-IoT2050-Node-RED-Unauthenticated-Root-RCE/",
       "affected_product": "Siemens SIMATIC IoT2050",
-      "impact_achieved": "Commands ran as root in the emulated Node-RED environment.",
+      "rce_achieved": null,
       "dir": "CVE-2026-58115",
       "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-58115"
     },
@@ -160,7 +160,7 @@
       ],
       "writeup": "https://blog.al4n4n.com/btcpay-greenfield-2fa-bypass/",
       "affected_product": "BTCPay Server",
-      "impact_achieved": "The Greenfield API accepted valid account credentials without the configured second factor.",
+      "rce_achieved": null,
       "dir": "btcpay-greenfield-2fa-bypass",
       "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/btcpay-greenfield-2fa-bypass"
     },
@@ -176,7 +176,7 @@
       ],
       "writeup": "https://blog.al4n4n.com/CVE-2026-98432-Linux-Kernel-TCP-Race-UAF/",
       "affected_product": "Linux kernel",
-      "impact_achieved": "The lab observed a TCP use-after-free and disclosure of kernel heap data.",
+      "rce_achieved": null,
       "dir": "CVE-2026-98432",
       "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-98432"
     },
@@ -192,7 +192,7 @@
       ],
       "writeup": "https://blog.al4n4n.com/CVE-2026-102785-YOOtheme-Pro-Image-Handler-RCE/",
       "affected_product": "YOOtheme Pro",
-      "impact_achieved": "PHP code executed under the web server account in the lab.",
+      "rce_achieved": null,
       "dir": "CVE-2026-102785",
       "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-102785"
     },
@@ -208,7 +208,7 @@
       ],
       "writeup": "https://blog.al4n4n.com/CVE-2026-115560-PHP-Session-Upload-Progress-RCE/",
       "affected_product": "PHP",
-      "impact_achieved": "Object injection led to command execution with a synthetic gadget in the lab application.",
+      "rce_achieved": null,
       "dir": "CVE-2026-115560",
       "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-115560"
     },
@@ -224,7 +224,7 @@
       ],
       "writeup": "https://blog.al4n4n.com/ZDI-CAN-33549-ksmbd-SMB-Direct-Integer-Underflow/",
       "affected_product": "Linux kernel ksmbd",
-      "impact_achieved": "KASAN detected an out-of-bounds heap write in the SMB Direct implementation.",
+      "rce_achieved": null,
       "dir": "ZDI-CAN-33549",
       "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/ZDI-CAN-33549"
     },
@@ -240,7 +240,7 @@
       ],
       "writeup": "https://blog.al4n4n.com/ZDI-CAN-33774-ksmbd-Protocol-Dispatch-Race-Condition/",
       "affected_product": "Linux kernel ksmbd",
-      "impact_achieved": "The lab observed disclosure of kernel heap bytes.",
+      "rce_achieved": null,
       "dir": "ZDI-CAN-33774",
       "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/ZDI-CAN-33774"
     },
@@ -256,7 +256,7 @@
       ],
       "writeup": "https://blog.al4n4n.com/CVE-2026-112403-Pillow-Heap-Buffer-Overflow-JPEG-Decoder/",
       "affected_product": "Pillow",
-      "impact_achieved": "The image-processing service crashed during JPEG decoding.",
+      "rce_achieved": null,
       "dir": "CVE-2026-112403",
       "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-112403"
     },
@@ -272,7 +272,7 @@
       ],
       "writeup": "https://blog.al4n4n.com/CVE-2026-110264-GitLab-Onigmo-Regex-Integer-Overflow/",
       "affected_product": "GitLab",
-      "impact_achieved": "Heap corruption crashed a Puma worker.",
+      "rce_achieved": null,
       "dir": "CVE-2026-110264",
       "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-110264"
     },
@@ -289,7 +289,7 @@
       ],
       "writeup": "https://blog.al4n4n.com/CVE-2026-109618-CVE-2026-109619-PHP-UAF-zend-bailout/",
       "affected_product": "PHP",
-      "impact_achieved": "Apache mod_php workers crashed, causing denial of service.",
+      "rce_achieved": null,
       "dir": "CVE-2026-109618-and-CVE-2026-109619",
       "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-109618-and-CVE-2026-109619"
     },
@@ -305,7 +305,7 @@
       ],
       "writeup": "https://blog.al4n4n.com/CVE-2026-25253-OpenClaw-One-Click-RCE-Analysis/",
       "affected_product": "OpenClaw",
-      "impact_achieved": null,
+      "rce_achieved": null,
       "dir": "CVE-2026-25253",
       "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-25253"
     }

@@ -149,7 +149,7 @@ def main():
     entries = load()
     readme = ROOT / "README.md"
     records = [{key: value for key, value in entry.items() if key != "included"} for entry in entries]
-    catalog = {"schema_version": 1, "entries": records}
+    catalog = {"schema_version": 2, "entries": records}
     outputs = {
         readme: replace_block(readme, START, END, readme_block(entries)),
         ROOT / "INDEX.md": index_md(entries),

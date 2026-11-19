@@ -11,7 +11,7 @@ Use the [JSON Schema](schemas/research-entry.schema.json) as the format contract
 | `ids` | Array of identifiers, primary ID first. Supported forms include CVE, GHSA, ZDI-CAN, and a lowercase hyphenated local slug for research awaiting a public identifier. When an ID is assigned later, add it and preserve the directory path so existing citations keep working. |
 | `title` | A one-line research title suitable for a citation. |
 | `affected_product` | The name of the affected product or component. Put tested versions and configuration details in the README. |
-| `impact_achieved` | A short summary of the outcome documented in the study. Include qualifications such as an emulated target or instrumented build. Use `null` when the entry lacks evidence for an observed outcome. Record broader advisory claims separately in the README. |
+| `rce_achieved` | Record the remote code execution outcome for this study. Use `true` if the study demonstrated RCE, `false` if the study concluded without achieving RCE, and `null` if unassessed or inconclusive. Document the evidence and test conditions in the entry README. |
 | `authors` | The researchers who authored this study, in citation order. Use a consistent public name or handle. Credit the original vulnerability reporter separately in the README when applicable. |
 | `added` | The calendar date the study was added to this repository, formatted as YYYY-MM-DD. Keep this date when making corrections. |
 | `cvss` | The score from 0 to 10 stated in the study, or `null` if unavailable. Cite the score's source in the README. |

@@ -3,7 +3,7 @@
   "title": "achilles-heel research entry",
   "type": "object",
   "additionalProperties": false,
-  "required": ["ids", "title", "authors", "added", "cvss", "writeup", "affected_product", "impact_achieved"],
+  "required": ["ids", "title", "authors", "added", "cvss", "writeup", "affected_product", "rce_achieved"],
   "properties": {
     "ids": {
       "description": "Public identifiers or stable local slugs covered by this entry, primary ID first.",
@@ -22,7 +22,10 @@
     },
     "title": {"$ref": "#/$defs/text"},
     "affected_product": {"$ref": "#/$defs/text"},
-    "impact_achieved": {"anyOf": [{"$ref": "#/$defs/text"}, {"type": "null"}]},
+    "rce_achieved": {
+      "description": "Contributor-reported remote code execution outcome in this study. Null means unassessed or inconclusive.",
+      "type": ["boolean", "null"]
+    },
     "authors": {
       "description": "Authors of this research entry, in citation order.",
       "type": "array", "minItems": 1, "uniqueItems": true,
