@@ -395,3 +395,9 @@ Patched kernel: zero crashes. The fix correctly prevents the integer underflow.
 ## License
 
 Part of [achilles-heel](https://github.com/al4n4n/achilles-heel), licensed under [CC BY 4.0](../LICENSE). Anyone who shares or builds on this work, commercial or not, must credit "al4n4n (Dadb0d)" and link to https://github.com/al4n4n/achilles-heel. See [Attribution](../README.md#attribution) and [DISCLAIMER](../DISCLAIMER.md).
+
+<!-- citation:start -->
+## Cite this research
+
+> al4n4n (Dadb0d). Linux kernel ksmbd SMB Direct integer underflow (ZDI-CAN-33549). *achilles-heel*, added 2026-10-24. <https://github.com/al4n4n/achilles-heel/tree/main/ZDI-CAN-33549>. [Research article](https://blog.al4n4n.com/ZDI-CAN-33549-ksmbd-SMB-Direct-Integer-Underflow/).
+<!-- citation:end -->

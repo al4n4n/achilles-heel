@@ -12,7 +12,12 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: README table and INDEX.md are up to date
+      - name: Install metadata validator
+        run: |
+          python3 -m venv "$RUNNER_TEMP/catalog-env"
+          "$RUNNER_TEMP/catalog-env/bin/pip" install -r scripts/requirements.txt
+          echo "$RUNNER_TEMP/catalog-env/bin" >> "$GITHUB_PATH"
+      - name: Validate metadata, catalogs, and entry citations
         run: python3 scripts/build_index.py --check
       - name: Relative links resolve
         run: python3 scripts/check_links.py

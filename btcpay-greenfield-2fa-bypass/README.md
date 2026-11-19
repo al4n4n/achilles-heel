@@ -279,3 +279,9 @@ See [`capture/README.md`](capture/README.md) for the capture method and the patc
 ## License
 
 Part of [achilles-heel](https://github.com/al4n4n/achilles-heel), licensed under [CC BY 4.0](../LICENSE). Anyone who shares or builds on this work, commercial or not, must credit "al4n4n (Dadb0d)" and link to https://github.com/al4n4n/achilles-heel. See [Attribution](../README.md#attribution) and [DISCLAIMER](../DISCLAIMER.md).
+
+<!-- citation:start -->
+## Cite this research
+
+> al4n4n (Dadb0d). BTCPay Server Greenfield API TOTP 2FA bypass (btcpay-greenfield-2fa-bypass). *achilles-heel*, added 2026-11-04. <https://github.com/al4n4n/achilles-heel/tree/main/btcpay-greenfield-2fa-bypass>. [Research article](https://blog.al4n4n.com/btcpay-greenfield-2fa-bypass/).
+<!-- citation:end -->

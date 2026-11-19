@@ -23,9 +23,37 @@ The 10 most recently added critical entries (CVSS 9.0 or higher), newest first. 
 | [CVE-2026-110264](CVE-2026-110264/) | GitLab Onigmo regex integer overflow via org-ruby | 10.0 | PoC |
 
 CVSS is the score stated in each directory's README.
+
+<details>
+<summary>Browse all 17 CVE IDs</summary>
+
+**2026**
+
+[CVE-2026-25253](CVE-2026-25253/) ·
+[CVE-2026-58115](CVE-2026-58115/) ·
+[CVE-2026-98432](CVE-2026-98432/) ·
+[CVE-2026-102785](CVE-2026-102785/) ·
+[CVE-2026-104007](CVE-2026-104007/) ·
+[CVE-2026-109618](CVE-2026-109618-and-CVE-2026-109619/) ·
+[CVE-2026-109619](CVE-2026-109618-and-CVE-2026-109619/) ·
+[CVE-2026-110186](CVE-2026-110186/) ·
+[CVE-2026-110264](CVE-2026-110264/) ·
+[CVE-2026-112403](CVE-2026-112403/) ·
+[CVE-2026-114938](CVE-2026-114938/) ·
+[CVE-2026-115560](CVE-2026-115560/) ·
+[CVE-2026-116779](CVE-2026-116779/) ·
+[CVE-2026-118306](CVE-2026-118306/) ·
+[CVE-2026-123874](CVE-2026-123874/) ·
+[CVE-2026-125350](CVE-2026-125350/) ·
+[CVE-2026-128067](CVE-2026-128067/)
+
+</details>
+
 <!-- research-table:end -->
 
 Write-ups for each are on [blog.al4n4n.com](https://blog.al4n4n.com).
+
+Browse the [research index](INDEX.md) or download the [machine-readable catalog](index.json). Each entry includes a citation at the end of its README. See the [contributor guide](CONTRIBUTING.md) to add or update an entry.
 
 ## Getting started
 
@@ -42,7 +70,7 @@ Then follow that directory's README. Most follow the same layout:
 - `capture/`: the network capture of the attack
 - `detection/`: Suricata, Sigma or YARA rules, for education only
 - `evidence/`: the raw output of every run behind each claim (newer directories)
-- `meta.json`: ID, title, date added to this repository and CVSS, used to build [INDEX.md](INDEX.md)
+- `meta.json`: research metadata used to generate the catalogs and entry citation
 
 Run the labs and PoCs only against targets you set up yourself, ideally in a disposable virtual machine: several of them crash their target on purpose.
 

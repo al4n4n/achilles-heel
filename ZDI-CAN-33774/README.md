@@ -376,3 +376,9 @@ Patched kernel: zero leaks, zero KASAN reports. The `wait_event()` prevents the 
 ## License
 
 Part of [achilles-heel](https://github.com/al4n4n/achilles-heel), licensed under [CC BY 4.0](../LICENSE). Anyone who shares or builds on this work, commercial or not, must credit "al4n4n (Dadb0d)" and link to https://github.com/al4n4n/achilles-heel. See [Attribution](../README.md#attribution) and [DISCLAIMER](../DISCLAIMER.md).
+
+<!-- citation:start -->
+## Cite this research
+
+> al4n4n (Dadb0d). Linux kernel ksmbd protocol dispatch race condition (ZDI-CAN-33774). *achilles-heel*, added 2026-10-24. <https://github.com/al4n4n/achilles-heel/tree/main/ZDI-CAN-33774>. [Research article](https://blog.al4n4n.com/ZDI-CAN-33774-ksmbd-Protocol-Dispatch-Race-Condition/).
+<!-- citation:end -->
