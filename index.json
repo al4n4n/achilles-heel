@@ -3,6 +3,23 @@
   "entries": [
     {
       "ids": [
+        "CVE-2026-132825"
+      ],
+      "title": "Ruby case-conversion one-byte heap buffer overflow via sharp s in single-byte encodings",
+      "added": "2026-11-20",
+      "cvss": 7.4,
+      "type": "library",
+      "authors": [
+        "al4n4n (Dadb0d)"
+      ],
+      "writeup": "https://blog.al4n4n.com/CVE-2026-132825-Ruby-Case-Conversion-Heap-Buffer-Overflow/",
+      "affected_product": "Ruby",
+      "rce_achieved": null,
+      "dir": "CVE-2026-132825",
+      "entry_url": "https://github.com/al4n4n/achilles-heel/tree/main/CVE-2026-132825"
+    },
+    {
+      "ids": [
         "CVE-2026-114938"
       ],
       "title": "OpenJDK HotSpot AVX-512 Base64 decode heap overflow via HTTP Basic auth",

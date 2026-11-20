@@ -1,6 +1,6 @@
 # Index
 
-All 19 research entries in this repository, most recently added first.
+All 20 research entries in this repository, most recently added first.
 
 CVSS is the score stated in each directory's README; severity follows the CVSS v3 rating scale; "—" means no score is stated.
 
@@ -8,6 +8,7 @@ CVSS is the score stated in each directory's README; severity follows the CVSS v
 
 | ID | Vulnerability | CVSS | Severity | Included | Write-up |
 |---|---|---|---|---|---|
+| [CVE-2026-132825](CVE-2026-132825/) | Ruby case-conversion one-byte heap buffer overflow via sharp s in single-byte encodings | 7.4 | High | PoC · pcap · Suricata · Sigma · raw evidence | [Article](https://blog.al4n4n.com/CVE-2026-132825-Ruby-Case-Conversion-Heap-Buffer-Overflow/) |
 | [CVE-2026-114938](CVE-2026-114938/) | OpenJDK HotSpot AVX-512 Base64 decode heap overflow via HTTP Basic auth | 8.1 | High | PoC · pcap · Suricata · raw evidence | [Article](https://blog.al4n4n.com/CVE-2026-114938-Java4Shell-AVX512-Base64-Heap-Overflow/) |
 | [CVE-2026-104007](CVE-2026-104007/) | LibreOffice JDBC driver code execution via pivot table ODB fetch | 8.5 | High | PoC · pcap · Suricata · YARA · raw evidence | [Article](https://blog.al4n4n.com/CVE-2026-104007-LibreOffice-JDBC-Pivot-Table-RCE/) |
 | [CVE-2026-123874](CVE-2026-123874/) | Node.js HTTP/2 use-after-free via respondWithFile stream reset | 7.5 | High | PoC · pcap · Suricata · Sigma · raw evidence | [Article](https://blog.al4n4n.com/CVE-2026-123874-Node-HTTP2-Use-After-Free/) |
