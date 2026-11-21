@@ -7,7 +7,7 @@ Each directory covers one vulnerability, or a pair disclosed together: a local l
 ## Latest critical research
 
 <!-- research-table:start -->
-The 10 most recently added critical entries (CVSS 9.0 or higher), newest first. All 19 entries, every severity: [INDEX.md](INDEX.md).
+The 10 most recently added critical entries (CVSS 9.0 or higher), newest first. All 20 entries, every severity: [INDEX.md](INDEX.md).
 
 | ID | Vulnerability | CVSS | Included |
 |---|---|---|---|
@@ -25,7 +25,7 @@ The 10 most recently added critical entries (CVSS 9.0 or higher), newest first. 
 CVSS is the score stated in each directory's README.
 
 <details>
-<summary>Browse all 17 CVE IDs</summary>
+<summary>Browse all 18 CVE IDs</summary>
 
 **2026**
 
@@ -45,7 +45,8 @@ CVSS is the score stated in each directory's README.
 [CVE-2026-118306](CVE-2026-118306/) ·
 [CVE-2026-123874](CVE-2026-123874/) ·
 [CVE-2026-125350](CVE-2026-125350/) ·
-[CVE-2026-128067](CVE-2026-128067/)
+[CVE-2026-128067](CVE-2026-128067/) ·
+[CVE-2026-132825](CVE-2026-132825/)
 
 </details>
 
