@@ -7,10 +7,11 @@ Each directory covers one vulnerability, or a pair disclosed together: a local l
 ## Latest critical research
 
 <!-- research-table:start -->
-The 10 most recently added critical entries (CVSS 9.0 or higher), newest first. All 20 entries, every severity: [INDEX.md](INDEX.md).
+The 10 most recently added critical entries (CVSS 9.0 or higher), newest first. All 21 entries, every severity: [INDEX.md](INDEX.md).
 
 | ID | Vulnerability | CVSS | Included |
 |---|---|---|---|
+| [CVE-2026-134401](CVE-2026-134401/) | Chrome Variations HTTP seed fallback: signed-seed replay and start-up denial of service | 9.6 | PoC · pcap · Suricata · raw evidence |
 | [CVE-2026-116779](CVE-2026-116779/) | FreeSWITCH SIP MESSAGE command execution | 9.8 | PoC · pcap · Suricata · Sigma · raw evidence |
 | [CVE-2026-110186](CVE-2026-110186/) | Langflow code injection via pydoc scanner bypass | 9.8 | PoC · pcap · Suricata · Sigma |
 | [CVE-2026-118306](CVE-2026-118306/) | Chromium FileSystemAccessManagerImpl use-after-free | 9.6 | PoC · Suricata · Sigma |
@@ -20,12 +21,11 @@ The 10 most recently added critical entries (CVSS 9.0 or higher), newest first. 
 | [CVE-2026-115560](CVE-2026-115560/) | PHP session upload-progress serialize handler mismatch | 9.8 | PoC · Suricata · Sigma |
 | [ZDI-CAN-33549](ZDI-CAN-33549/) | Linux kernel ksmbd SMB Direct integer underflow | 9.0 | PoC · Suricata · Sigma |
 | [ZDI-CAN-33774](ZDI-CAN-33774/) | Linux kernel ksmbd protocol dispatch race condition | 9.0 | PoC · Suricata · Sigma |
-| [CVE-2026-110264](CVE-2026-110264/) | GitLab Onigmo regex integer overflow via org-ruby | 10.0 | PoC |
 
 CVSS is the score stated in each directory's README.
 
 <details>
-<summary>Browse all 18 CVE IDs</summary>
+<summary>Browse all 19 CVE IDs</summary>
 
 **2026**
 
@@ -46,7 +46,8 @@ CVSS is the score stated in each directory's README.
 [CVE-2026-123874](CVE-2026-123874/) ·
 [CVE-2026-125350](CVE-2026-125350/) ·
 [CVE-2026-128067](CVE-2026-128067/) ·
-[CVE-2026-132825](CVE-2026-132825/)
+[CVE-2026-132825](CVE-2026-132825/) ·
+[CVE-2026-134401](CVE-2026-134401/)
 
 </details>
 
